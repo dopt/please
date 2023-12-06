@@ -1,0 +1,71 @@
+{
+  "name": "@dopt/please",
+  "version": "1.0.3",
+  "private": false,
+  "description": "A CLI for developing in monorepos - not building them",
+  "homepage": "https://github.com/dopt/please",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dopt/please.git"
+  },
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": "./cli.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "👇required package scripts": "",
+    "build": "pnpm run clean; pnpm run generate-parser; tsup;",
+    "clean": "shx rm -rf ./dist; rm -rf src/parser.ts",
+    "dev": "pnpm run build --watch src",
+    "format": "prettier --w .",
+    "formatcheck": "pnpm exec check-formatting",
+    "lint": "echo \"@dopt/please does not require lint\"; exit 0;",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "☝️ required package scripts": "",
+    "generate-parser": "node ./generate-parser.js",
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@dopt/please\"; pnpm test;",
+    "postpublish": "pkg-sync"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@pnpm/find-workspace-dir": "^6.0.0",
+    "@pnpm/find-workspace-packages": "^6.0.0",
+    "@types/micromatch": "^4.0.2",
+    "chalk": "4.1.2",
+    "concurrently": "8.2.0",
+    "micromatch": "4.0.5"
+  },
+  "devDependencies": {
+    "@dopt/check-formatting": "1.0.0",
+    "@dopt/config": "1.1.0",
+    "@dopt/pkg-sync": "1.1.7",
+    "@dopt/tsup": "1.0.0",
+    "@types/jest": "29.5.2",
+    "@typescript-eslint/eslint-plugin": "5.59.11",
+    "@typescript-eslint/parser": "5.59.11",
+    "esbuild": "0.18.2",
+    "esbuild-jest": "0.5.0",
+    "eslint": "8.42.0",
+    "eslint-plugin-react": "7.32.2",
+    "jest": "29.5.0",
+    "peggy": "2.0.1",
+    "prettier": "2.8.8",
+    "shx": "0.3.4",
+    "ts-pegjs": "4.2.1",
+    "tsup": "7.0.0",
+    "typescript": "5.1.6"
+  },
+  "openSource": true,
+  "packageManager": "pnpm@8.10.0"
+}
