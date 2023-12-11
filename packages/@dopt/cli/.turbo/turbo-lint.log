@@ -1,0 +1,5 @@
+
+> @dopt/please@1.0.1 lint /home/joe/dopt/repos/dopt/packages/@dopt/please
+> echo "@dopt/please does not require lint"; exit 0;
+
+@dopt/please does not require lint

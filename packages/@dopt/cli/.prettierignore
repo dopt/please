@@ -1,4 +1,2 @@
 dist/
 src/parser/index.ts
-node_modules
-.turbo

@@ -1,0 +1,4 @@
+
+> @dopt/please@1.0.1 typecheck /home/joe/dopt/repos/dopt/packages/@dopt/please
+> tsc --noEmit
+
