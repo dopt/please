@@ -1,7 +1,7 @@
-import { findWorkspacePackages, Project } from '@pnpm/find-workspace-packages';
-import { findWorkspaceDir } from '@pnpm/find-workspace-dir';
+import { findWorkspacePackages, Project } from "@pnpm/find-workspace-packages";
+import { findWorkspaceDir } from "@pnpm/find-workspace-dir";
 
-import { TARGET_EXAMPLE_PACKAGE_SCRIPTS } from './const';
+import { TARGET_EXAMPLE_PACKAGE_SCRIPTS } from "./const";
 
 export async function findWorkspaceRoot() {
   return await findWorkspaceDir(process.cwd());
@@ -10,10 +10,10 @@ export async function findWorkspaceRoot() {
 export async function getPackages() {
   const workspaceDir = await findWorkspaceRoot();
   if (workspaceDir == undefined) {
-    throw new Error('Unable to locate pnpm workspace root');
+    throw new Error("Unable to locate pnpm workspace root");
   }
   const workspacePacakges = await findWorkspacePackages(
-    (await findWorkspaceDir(process.cwd())) || ''
+    (await findWorkspaceDir(process.cwd())) || ""
   );
 
   return workspacePacakges.slice(1);
@@ -92,12 +92,12 @@ export function collectMonorepoContextualExamples(packages: Project[]) {
         examples[1]
       }:${examplePackages[examples[1]]
         .map((pkg) => pkg.manifest.name)
-        .join(',')}`,
+        .join(",")}`,
       `${examples[0]}:${examplePackages[examples[0]]
         .map((pkg) => pkg.manifest.name)
-        .join(',')} ${examples[1]}:${examplePackages[examples[1]]
+        .join(",")} ${examples[1]}:${examplePackages[examples[1]]
         .map((pkg) => pkg.manifest.name)
-        .join(',')}`,
+        .join(",")}`,
     ];
   }
 
