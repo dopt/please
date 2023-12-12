@@ -1,5 +1,11 @@
 # @dopt/please
 
+## 1.0.6
+
+### Patch Changes
+
+- 577b973: Add the README back, which got lost in the move to a monorepo setup.
+
 ## 1.0.5
 
 ### Patch Changes
