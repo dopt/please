@@ -1,5 +1,14 @@
 # @dopt/please
 
+## 1.0.4
+
+### Patch Changes
+
+- 2b2d8f7: Refactor the please repository significantly, breaking it into 3 distinct packages.
+- Updated dependencies [2b2d8f7]
+  - @dopt/please-function@1.0.0
+  - @dopt/please-parser@1.0.0
+
 ## 1.0.3
 
 ### Patch Changes
