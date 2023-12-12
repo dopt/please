@@ -2,6 +2,8 @@
 
 A CLI for developing in monorepos - not building them
 
+[![ci](https://github.com/dopt/dopt/actions/workflows/ci.yml/badge.svg)](https://github.com/dopt/dopt/actions/workflows/ci.yml)
+
 ### Why
 
 Because developing in monorepos can be challenging. There are great tools for building them (e.g. [turbo](https://turborepo.org/), [bazel](https://bazel.build/), [rush](https://rushjs.io/), [gradle](https://gradle.org/), etc) but the experience of developing in them often involves lots of manual effort.
