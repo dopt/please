@@ -1,2 +1,4 @@
-const { eslint } = require("@dopt/config");
-module.exports = {};
+const { eslint } = require('@dopt/config');
+module.exports = {
+  ...eslint,
+};

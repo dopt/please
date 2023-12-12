@@ -10,7 +10,7 @@ export function usage(examples?: string[]): string {
     [example1, example2, example3] = examples;
   }
 
-  const [arg1, arg2] = example1.split(" ");
+  const [_, arg2] = example1.split(" ");
 
   return `
   ${chalk.bold.white("A CLI for developing in monorepos - not building them")}

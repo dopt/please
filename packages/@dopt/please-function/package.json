@@ -48,8 +48,9 @@
     "@dopt/pkg-clean": "1.0.0",
     "@dopt/pkg-format": "0.0.0",
     "@dopt/pkg-lint": "1.0.0",
-    "@types/node": "18.16.18",
     "@types/micromatch": "^4.0.2",
+    "@types/node": "18.16.18",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
     "typescript": "5.1.6",
     "vitest": "^1.0.4"
   }
