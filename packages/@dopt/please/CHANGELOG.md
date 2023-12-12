@@ -1,5 +1,11 @@
 # @dopt/please
 
+## 1.0.5
+
+### Patch Changes
+
+- 8df0b04: Fix the dist'd cli.js file s.t. it imports the correct file.
+
 ## 1.0.4
 
 ### Patch Changes
