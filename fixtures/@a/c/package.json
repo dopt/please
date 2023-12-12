@@ -1,4 +1,5 @@
 {
+  "private": "true",
   "name": "@a/c",
   "scripts": {
     "c": "",
