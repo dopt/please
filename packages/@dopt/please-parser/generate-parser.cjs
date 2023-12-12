@@ -11,8 +11,7 @@ fs.readFile("src/parser.pegjs", function (err, data) {
     cache: true,
     plugins: [tspegjs],
     tspegjs: {
-      customHeader:
-        "// @ts-nocheck\nimport * as ast from './ast';\nconst types = ast.types;",
+      customHeader: "import { AstNode, types } from './ast';",
     },
     returnTypes: {
       startRuleFunctions: "object",

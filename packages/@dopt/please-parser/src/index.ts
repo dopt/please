@@ -1,20 +1,30 @@
 import * as parser from "./parser";
 
-export function parse(input: string): [string, string[]][] {
-  let parsed;
+import { AstNode } from "./ast";
 
+type Command = string;
+type Package = string;
+export type Parsed = [Command, Package[]][];
+
+export function parse(input: string) {
   try {
-    parsed = parser.parse(input);
+    const parsed: AstNode = parser.parse(input);
+
+    console.log(JSON.stringify(parsed, null, 2));
+
+    const please = parsed.children[0];
+    const commands = please.children;
+
+    return commands.reduce<Parsed>((result, command) => {
+      const packageList = command.children[0];
+      return [
+        ...result,
+        [command.value, packageList.children.map((node) => node.value)],
+      ];
+    }, []);
   } catch (e) {
     console.log("Parse error", e);
   }
 
-  const commands = parsed.children[0].children;
-  //@ts-ignore
-  return commands.reduce((result, command) => {
-    return [
-      ...result,
-      [command.value, command.children.children.map((c: any) => c.value)],
-    ];
-  }, []);
+  return [];
 }
