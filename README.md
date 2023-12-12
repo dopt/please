@@ -2,6 +2,7 @@
 
 A CLI for developing in monorepos - not building them
 
+![npm](https://img.shields.io/npm/v/%40dopt/please)
 [![ci](https://github.com/dopt/please/actions/workflows/ci.yml/badge.svg)](https://github.com/dopt/please/actions/workflows/ci.yml)
 
 ### Why
