@@ -44,6 +44,9 @@ importers:
       '@dopt/please-function':
         specifier: workspace:*
         version: link:../please-function
+      '@dopt/please-parser':
+        specifier: workspace:*
+        version: link:../please-parser
       chalk:
         specifier: 4.1.2
         version: 4.1.2

@@ -6,6 +6,7 @@ import { please } from "@dopt/please-function";
 import { usage } from "./usage";
 
 import { name, version, description } from "../package.json";
+import { parse } from "@dopt/please-parser";
 
 const main = defineCommand({
   meta: {
@@ -15,9 +16,10 @@ const main = defineCommand({
   },
   async run({ args }) {
     try {
-      await please("");
+      const parsed = parse(`please ${args._[0]}`);
+      await please(parsed);
     } catch (error) {
-      console.error(``);
+      console.error(error);
     }
   },
 });

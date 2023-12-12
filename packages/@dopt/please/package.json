@@ -39,6 +39,7 @@
   ],
   "dependencies": {
     "@dopt/please-function": "workspace:*",
+    "@dopt/please-parser": "workspace:*",
     "chalk": "4.1.2",
     "citty": "0.1.5"
   },

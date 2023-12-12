@@ -2,24 +2,24 @@ import { getPackages, findWorkspaceRoot } from "./pnpm";
 
 import { getNColors } from "./colors";
 
-import { parse } from "./parse";
-
 import { findMatchingPackages } from "./match";
 
 import concurrently from "concurrently";
 
-type Name = `${string}`;
-type Command = `pnpm --filter ${Name} run ${string}`;
+import { Parsed as Parameters } from "@dopt/please-parser";
 
-export async function please(args: string) {
+type PackageName = string;
+type PackageScript = string;
+type Name = `${PackageName}:${PackageName}`;
+type Command = `pnpm --filter ${PackageName} run ${PackageScript}`;
+
+export async function please(parameters: Parameters) {
   const packages = await getPackages();
   const workspaceRoot = await findWorkspaceRoot();
 
   const commands: [Name, Command][] = [];
 
-  const cliArgs = parse(args);
-
-  cliArgs.forEach(([packageScript, targetPackages]) => {
+  parameters.forEach(([packageScript, targetPackages]) => {
     findMatchingPackages(packages, targetPackages).forEach(
       (matchingPackage) => {
         const { scripts = {}, name: packageName } = matchingPackage.manifest;
