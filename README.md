@@ -2,7 +2,7 @@
 
 A CLI for developing in monorepos - not building them
 
-[![ci](https://github.com/dopt/dopt/actions/workflows/ci.yml/badge.svg)](https://github.com/dopt/dopt/actions/workflows/ci.yml)
+[![ci](https://github.com/dopt/please/actions/workflows/ci.yml/badge.svg)](https://github.com/dopt/please/actions/workflows/ci.yml)
 
 ### Why
 
