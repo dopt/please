@@ -29,7 +29,6 @@ export async function please(parameters: Parameters, runOptions?: RunOptions) {
         const { scripts = {}, name: packageName } = matchingPackage.manifest;
 
         if (typeof scripts[packageScript] === "string") {
-          console.log("matching");
           commands.push([
             `${packageName}:${packageScript}`,
             `pnpm --filter ${packageName} run ${packageScript}`,

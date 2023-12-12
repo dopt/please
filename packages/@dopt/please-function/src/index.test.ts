@@ -54,11 +54,6 @@ import { Parsed } from "@dopt/please-parser";
     describe(group.describe, () => {
       group?.cases?.forEach((example) => {
         it(example.it, async () => {
-          const dryRunOutput = await please(example.in as Parsed, {
-            dryRun: true,
-          });
-          console.log("dryRunOutput", dryRunOutput);
-
           expect(example.out).toEqual(
             await please(example.in as Parsed, { dryRun: true })
           );
