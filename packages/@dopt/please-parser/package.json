@@ -28,7 +28,7 @@
     "format": "pkg-format",
     "formatcheck": "pkg-format -c",
     "lint": "pkg-lint",
-    "test": "vitest",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
     "generate-parser": "node ./generate-parser.cjs",
