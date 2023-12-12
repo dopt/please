@@ -10,8 +10,6 @@ export function parse(input: string) {
   try {
     const parsed: AstNode = parser.parse(input);
 
-    console.log(JSON.stringify(parsed, null, 2));
-
     const please = parsed.children[0];
     const commands = please.children;
 
