@@ -1,12 +1,12 @@
 {
-  "name": "@dopt/please-parser",
+  "name": "@dopt/please-function",
   "version": "0.0.0",
   "description": "",
   "homepage": "https://github.com/dopt/please",
   "repository": {
     "type": "git",
     "url": "https://github.com/dopt/please.git",
-    "directory": "packages/@dopt/please-parser"
+    "directory": "packages/@dopt/please-function"
   },
   "license": "MIT",
   "main": "./dist/cjs/index.cjs.js",
@@ -21,25 +21,26 @@
     }
   },
   "scripts": {
-    "👇required package scripts": "",
-    "build": "pnpm run generate-parser; pkg-build",
+    "build": "pkg-build",
     "clean": "pkg-clean",
     "dev": "pkg-build -s",
     "format": "pkg-format",
     "formatcheck": "pkg-format -c",
     "lint": "pkg-lint",
-    "test": "vitest",
+    "test": "echo \"@dopt/please-function has no unit tests\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
-    "generate-parser": "node ./generate-parser.cjs",
-    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@dopt/please-parser\""
+    "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@dopt/please-function\""
   },
   "files": [
     "dist"
   ],
   "dependencies": {
-    "chalk": "4.1.2",
-    "citty": "0.1.5"
+    "@dopt/please-parser": "workspace:*",
+    "@pnpm/find-workspace-dir": "^6.0.0",
+    "@pnpm/find-workspace-packages": "^6.0.0",
+    "concurrently": "8.2.0",
+    "micromatch": "4.0.5"
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
@@ -48,8 +49,7 @@
     "@dopt/pkg-format": "0.0.0",
     "@dopt/pkg-lint": "1.0.0",
     "@types/node": "18.16.18",
-    "peggy": "2.0.1",
-    "ts-pegjs": "4.2.1",
+    "@types/micromatch": "^4.0.2",
     "typescript": "5.1.6",
     "vitest": "^1.0.4"
   }

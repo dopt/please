@@ -1,20 +1,12 @@
-import {
-  getPackages,
-  collectMonorepoContextualExamples,
-  findWorkspaceRoot,
-} from './pnpm';
+import { getPackages, findWorkspaceRoot } from "./pnpm";
 
-import { HELP_FLAGS } from './const';
+import { getNColors } from "./colors";
 
-import { getNColors } from './colors';
+import { parse } from "./parse";
 
-import { helpText } from './help';
+import { findMatchingPackages } from "./match";
 
-import { help, parse } from './parse';
-
-import { findMatchingPackages } from './match';
-
-import concurrently from 'concurrently';
+import concurrently from "concurrently";
 
 type Name = `${string}`;
 type Command = `pnpm --filter ${Name} run ${string}`;
@@ -22,13 +14,6 @@ type Command = `pnpm --filter ${Name} run ${string}`;
 export async function please(args: string) {
   const packages = await getPackages();
   const workspaceRoot = await findWorkspaceRoot();
-
-  const helpArgs = help(args);
-
-  if (helpArgs.some((arg) => HELP_FLAGS.includes(arg))) {
-    console.log(helpText(collectMonorepoContextualExamples(packages)));
-    process.exit(0);
-  }
 
   const commands: [Name, Command][] = [];
 
@@ -64,7 +49,7 @@ export async function please(args: string) {
     })),
     {
       cwd: workspaceRoot,
-      prefix: '{name}',
+      prefix: "{name}",
       prefixColors: getNColors(commands.length),
     }
   );
