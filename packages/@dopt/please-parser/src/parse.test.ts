@@ -49,6 +49,21 @@ import { parse } from "./";
     ],
   },
   {
+    describe: "Escaped package script names",
+    cases: [
+      {
+        it: "supports colon delimiters in package scripts",
+        in: "please {a:a}:@a/a",
+        out: [["a:a", ["@a/a"]]],
+      },
+      {
+        it: "supports colon delimiters in package scripts",
+        in: "please {a:::a}:@a/a",
+        out: [["a:::a", ["@a/a"]]],
+      },
+    ],
+  },
+  {
     describe: "Wildcard packages",
     cases: [
       {

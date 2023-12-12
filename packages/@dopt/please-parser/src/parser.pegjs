@@ -37,12 +37,15 @@ pkg_glob
 // Terminals
 
 command 
-= a:[A-Za-z_] b:[A-Za-z_0-9-]* {
+  = a:[A-Za-z_] b:[A-Za-z_0-9-]* {
     return AstNode.createNode(1, types.COMMAND, text());
+  }
+  / a:'{' b:('\\}'/[^\}])* c:'}' {
+    return AstNode.createNode(1, types.COMMAND, text().slice(1,-1));
   }
 
 identifier 
-= a:[A-Za-z_] b:[A-Za-z_0-9]* {
+  = a:[A-Za-z_] b:[A-Za-z_0-9]* {
     return AstNode.createNode(1, types.ID, text());
   }
 
