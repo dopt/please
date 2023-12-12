@@ -27,7 +27,7 @@
     "format": "pkg-format",
     "formatcheck": "pkg-format -c",
     "lint": "pkg-lint",
-    "test": "echo \"@dopt/please-function has no unit tests\"; exit 0;",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
     "prepublishOnly": "pnpm -w exec turbo run build --filter=\"@dopt/please-function\""

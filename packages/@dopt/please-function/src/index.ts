@@ -13,7 +13,14 @@ type PackageScript = string;
 type Name = `${PackageName}:${PackageName}`;
 type Command = `pnpm --filter ${PackageName} run ${PackageScript}`;
 
-export async function please(parameters: Parameters) {
+interface RunOptions {
+  dryRun: boolean;
+}
+
+export async function please(
+  parameters: Parameters,
+  { dryRun = false }: RunOptions
+) {
   const packages = await getPackages();
   const workspaceRoot = await findWorkspaceRoot();
 
@@ -24,19 +31,20 @@ export async function please(parameters: Parameters) {
       (matchingPackage) => {
         const { scripts = {}, name: packageName } = matchingPackage.manifest;
 
-        if (!scripts[packageScript]) {
-          throw new Error(
-            `MISSING_PACKAGE_SCRIPT: "${packageName}" has no ${packageScript} script`
-          );
+        if (typeof scripts[packageScript] === "string") {
+          console.log("matching");
+          commands.push([
+            `${packageName}:${packageScript}`,
+            `pnpm --filter ${packageName} run ${packageScript}`,
+          ]);
         }
-
-        commands.push([
-          `${packageName}:${packageScript}`,
-          `pnpm --filter ${packageName} run ${packageScript}`,
-        ]);
       }
     );
   });
+
+  if (dryRun) {
+    return commands;
+  }
 
   const { length } = commands
     .map((c) => c[0])

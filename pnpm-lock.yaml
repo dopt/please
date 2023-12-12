@@ -39,6 +39,14 @@ importers:
         specifier: ^1.11.1
         version: 1.11.1
 
+  fixtures/@a/a: {}
+
+  fixtures/@a/b: {}
+
+  fixtures/@a/c: {}
+
+  fixtures/a: {}
+
   packages/@dopt/please:
     dependencies:
       '@dopt/please-function':
@@ -170,8 +178,6 @@ importers:
       vitest:
         specifier: ^1.0.4
         version: 1.0.4(@types/node@18.16.18)
-
-  packages/@dopt/please-parser/dist/cjs: {}
 
 packages:
 
