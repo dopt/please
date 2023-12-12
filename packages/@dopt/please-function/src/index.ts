@@ -17,10 +17,7 @@ interface RunOptions {
   dryRun: boolean;
 }
 
-export async function please(
-  parameters: Parameters,
-  { dryRun = false }: RunOptions
-) {
+export async function please(parameters: Parameters, runOptions?: RunOptions) {
   const packages = await getPackages();
   const workspaceRoot = await findWorkspaceRoot();
 
@@ -42,7 +39,7 @@ export async function please(
     );
   });
 
-  if (dryRun) {
+  if (runOptions?.dryRun) {
     return commands;
   }
 

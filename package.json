@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --no-daemon",
     "clean": "turbo run clean",
     "format": "pnpm run --parallel -r format",
-    "lint": "pnpm exec turbo run lint",
+    "lint": "turbo run lint --no-daemon",
     "nuke": "pnpm clean; pnpm run uninstall;",
-    "test": "pnpm exec turbo run test",
-    "typecheck": "pnpm exec turbo run typecheck",
+    "test": "turbo run test --no-daemon",
+    "typecheck": "turbo run typecheck --no-daemon",
     "uninstall": "pnpm -r exec rm -rf node_modules",
     "commit": "cz",
     "release": "pnpm publish -r --access public"
