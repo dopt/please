@@ -1,12 +1,12 @@
 #! /usr/bin/env node
-import { defineCommand, runMain } from "citty";
+import { defineCommand, runMain } from 'citty';
 
-import { please } from "@dopt/please-function";
+import { please } from '@dopt/please-function';
 
-import { usage } from "./usage";
+import { usage } from './usage';
 
-import { name, version, description } from "../package.json";
-import { parse } from "@dopt/please-parser";
+import { name, version, description } from '../package.json';
+import { parse } from '@dopt/please-parser';
 
 const main = defineCommand({
   meta: {
