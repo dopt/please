@@ -8,26 +8,22 @@
     "url": "https://github.com/dopt/please.git"
   },
   "license": "MIT",
-  "main": "./dist/cjs/index.cjs.js",
-  "module": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
   "type": "module",
   "bin": "./cli.js",
   "exports": {
-    ".": {
-      "require": "./dist/cjs/index.cjs.js",
-      "import": "./dist/index.esm.js",
-      "types": "./dist/index.d.ts"
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
     }
   },
   "scripts": {
     "👇required package scripts": "",
-    "build": "pkg-build",
-    "clean": "pkg-clean",
-    "dev": "pkg-build -s",
-    "format": "pkg-format",
-    "formatcheck": "pkg-format -c",
-    "lint": "pkg-lint",
+    "build": "build",
+    "clean": "clean",
+    "dev": "build -s",
+    "format": "format",
+    "format:check": "format -c",
+    "lint": "lint",
     "test": "echo \"@dopt/please has no unit tests\"; exit 0;",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
@@ -45,12 +41,9 @@
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
-    "@dopt/pkg-build": "1.1.1",
-    "@dopt/pkg-clean": "1.0.0",
-    "@dopt/pkg-format": "0.0.0",
-    "@dopt/pkg-lint": "1.0.0",
+    "@pkg-tools/pkg-tools": "^0.0.4",
     "@types/node": "18.16.18",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "publint": "^0.2.7",
     "typescript": "5.1.6"
   }
 }
