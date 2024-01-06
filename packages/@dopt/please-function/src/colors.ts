@@ -1,10 +1,10 @@
 const colors = [
-  "green.bold",
-  "yellow.bold",
-  "blue.bold",
-  "magenta.bold",
-  "cyan.bold",
-  "white.bold",
+  'green.bold',
+  'yellow.bold',
+  'blue.bold',
+  'magenta.bold',
+  'cyan.bold',
+  'white.bold',
 ];
 
 export function getNColors(n: number) {

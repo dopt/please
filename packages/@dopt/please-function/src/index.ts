@@ -1,12 +1,12 @@
-import { getPackages, findWorkspaceRoot } from "./pnpm";
+import { getPackages, findWorkspaceRoot } from './pnpm';
 
-import { getNColors } from "./colors";
+import { getNColors } from './colors';
 
-import { findMatchingPackages } from "./match";
+import { findMatchingPackages } from './match';
 
-import concurrently from "concurrently";
+import concurrently from 'concurrently';
 
-import { Parsed as Parameters } from "@dopt/please-parser";
+import { Parsed as Parameters } from '@dopt/please-parser';
 
 type PackageName = string;
 type PackageScript = string;
@@ -28,7 +28,7 @@ export async function please(parameters: Parameters, runOptions?: RunOptions) {
       (matchingPackage) => {
         const { scripts = {}, name: packageName } = matchingPackage.manifest;
 
-        if (typeof scripts[packageScript] === "string") {
+        if (typeof scripts[packageScript] === 'string') {
           commands.push([
             `${packageName}:${packageScript}`,
             `pnpm --filter ${packageName} run ${packageScript}`,
@@ -53,7 +53,7 @@ export async function please(parameters: Parameters, runOptions?: RunOptions) {
     })),
     {
       cwd: workspaceRoot,
-      prefix: "{name}",
+      prefix: '{name}',
       prefixColors: getNColors(commands.length),
     }
   );

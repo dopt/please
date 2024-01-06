@@ -9,24 +9,21 @@
     "directory": "packages/@dopt/please-function"
   },
   "license": "MIT",
-  "main": "./dist/cjs/index.cjs.js",
-  "module": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
   "type": "module",
+  "types": "./dist/index.d.mts",
   "exports": {
-    ".": {
-      "require": "./dist/cjs/index.cjs.js",
-      "import": "./dist/index.esm.js",
-      "types": "./dist/index.d.ts"
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
     }
   },
   "scripts": {
-    "build": "pkg-build",
-    "clean": "pkg-clean",
-    "dev": "pkg-build -s",
-    "format": "pkg-format",
-    "formatcheck": "pkg-format -c",
-    "lint": "pkg-lint",
+    "build": "build",
+    "clean": "clean",
+    "dev": "build -s",
+    "format": "format",
+    "format:check": "format -c",
+    "lint": "lint",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "☝️ required package scripts": "",
@@ -44,13 +41,15 @@
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
-    "@dopt/pkg-build": "1.1.1",
-    "@dopt/pkg-clean": "1.0.0",
-    "@dopt/pkg-format": "0.0.0",
-    "@dopt/pkg-lint": "1.0.0",
+    "@pkg-tools/build": "^0.0.6",
+    "@pkg-tools/clean": "^0.0.6",
+    "@pkg-tools/config": "^0.0.6",
+    "@pkg-tools/format": "^0.0.6",
+    "@pkg-tools/lint": "^0.0.6",
     "@types/micromatch": "^4.0.2",
     "@types/node": "18.16.18",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "publint": "^0.2.7",
     "typescript": "5.1.6",
     "vitest": "^1.0.4"
   }
