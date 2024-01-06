@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "type": "module",
+  "types": "./dist/index.d.mts",
   "exports": {
     "import": {
       "types": "./dist/index.d.mts",
@@ -45,6 +46,7 @@
     "@pkg-tools/format": "^0.0.6",
     "@pkg-tools/lint": "^0.0.6",
     "@types/node": "18.16.18",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
     "peggy": "2.0.1",
     "publint": "^0.2.7",
     "ts-pegjs": "4.2.1",
