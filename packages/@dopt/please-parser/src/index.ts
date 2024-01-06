@@ -1,6 +1,6 @@
-import * as parser from "./parser";
+import * as parser from './parser';
 
-import { AstNode } from "./ast";
+import { AstNode } from './ast';
 
 type Command = string;
 type Package = string;
@@ -21,7 +21,7 @@ export function parse(input: string) {
       ];
     }, []);
   } catch (e) {
-    console.log("Parse error", e);
+    console.log('Parse error', e);
   }
 
   return [];

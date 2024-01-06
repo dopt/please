@@ -1,11 +1,11 @@
-var fs = require("fs");
-var peggy = require("peggy");
-var tspegjs = require("ts-pegjs");
+var fs = require('fs');
+var peggy = require('peggy');
+var tspegjs = require('ts-pegjs');
 
-fs.readFile("src/parser.pegjs", function (err, data) {
+fs.readFile('src/parser.pegjs', function (err, data) {
   if (err) throw err;
   var parser = peggy.generate(data.toString(), {
-    output: "source",
+    output: 'source',
     // Helps in debugging
     // trace: true,
     cache: true,
@@ -14,18 +14,18 @@ fs.readFile("src/parser.pegjs", function (err, data) {
       customHeader: "import { AstNode, types } from './ast';",
     },
     returnTypes: {
-      startRuleFunctions: "object",
-      startRuleFunction: "object",
-      please: "object",
-      argument: "object",
-      argument_list: "object",
-      lsep: "object",
-      colon: "object",
-      pkg_expr: "object",
-      pkg_glob: "object",
-      identifier: "object",
-      _: "object",
+      startRuleFunctions: 'object',
+      startRuleFunction: 'object',
+      please: 'object',
+      argument: 'object',
+      argument_list: 'object',
+      lsep: 'object',
+      colon: 'object',
+      pkg_expr: 'object',
+      pkg_glob: 'object',
+      identifier: 'object',
+      _: 'object',
     },
   });
-  fs.writeFileSync("src/parser.ts", parser);
+  fs.writeFileSync('src/parser.ts', parser);
 });

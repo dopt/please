@@ -41,7 +41,11 @@
   },
   "devDependencies": {
     "@dopt/config": "1.1.0",
-    "@pkg-tools/pkg-tools": "^0.0.4",
+    "@pkg-tools/build": "^0.0.6",
+    "@pkg-tools/clean": "^0.0.6",
+    "@pkg-tools/config": "^0.0.6",
+    "@pkg-tools/format": "^0.0.6",
+    "@pkg-tools/lint": "^0.0.6",
     "@types/node": "18.16.18",
     "publint": "^0.2.7",
     "typescript": "5.1.6"
