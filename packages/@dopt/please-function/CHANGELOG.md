@@ -1,5 +1,13 @@
 # @dopt/please-function
 
+## 1.0.1
+
+### Patch Changes
+
+- 3ab59b8: Ensure format on save in editor in this repository follows the rules of the package.
+- Updated dependencies [3ab59b8]
+  - @dopt/please-parser@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
