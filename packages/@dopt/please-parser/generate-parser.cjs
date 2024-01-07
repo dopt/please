@@ -1,10 +1,10 @@
-var fs = require('fs');
-var peggy = require('peggy');
-var tspegjs = require('ts-pegjs');
+const fs = require('fs');
+const peggy = require('peggy');
+const tspegjs = require('ts-pegjs');
 
 fs.readFile('src/parser.pegjs', function (err, data) {
   if (err) throw err;
-  var parser = peggy.generate(data.toString(), {
+  const parser = peggy.generate(data.toString(), {
     output: 'source',
     // Helps in debugging
     // trace: true,
