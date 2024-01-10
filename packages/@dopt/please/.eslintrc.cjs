@@ -1,2 +1,4 @@
-const pkgToolsConfig = require('./pkg-tools.config')
-module.exports = pkgToolsConfig.lint;
+const { getLintConfig } = require("@pkg-tools/config");
+module.exports = {
+  ...getLintConfig().overrideConfig,
+};
