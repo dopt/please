@@ -1,5 +1,14 @@
 # @dopt/please
 
+## 1.0.8
+
+### Patch Changes
+
+- 963d385: Update @pkg-tools/\* dependencies + configure lint/format given upstream changes.
+- Updated dependencies [963d385]
+  - @dopt/please-function@1.0.2
+  - @dopt/please-parser@1.0.2
+
 ## 1.0.7
 
 ### Patch Changes
